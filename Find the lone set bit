@@ -1,0 +1,19 @@
+import java.util.* ;
+import java.io.*; 
+public class Solution {
+	public static int findSetBit(int n) {
+		int count = 0;
+		int binary = 0;
+		while(n > 0){
+			if(n % 2 == 0){
+			}else{
+				binary++;
+			}
+			n = n / 2;
+			count++;
+		}
+
+		if(binary > 1 || binary < 1) return -1;
+		return count;
+	}
+}
