@@ -1,0 +1,15 @@
+ public class Solution {
+
+	public static String gameOfStones(int num) {
+		while(num != 0){
+			while(num - 2 > 3){
+				num = num - 2;
+			}
+				if(num == 5) return "Ale";
+				if(num == 4) return "Ale";
+				if(num == 3) return "Bob";
+				if(num <= 2) return "Ale";
+		}
+		return "Ale";
+	}
+}
