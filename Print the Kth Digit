@@ -1,0 +1,10 @@
+import java.util.* ;
+import java.io.*; 
+public class Solution {
+    public static int findKthFromRight(int n, int m, int k) {
+        long num = (long)Math.pow(n, m);
+        String s = String.valueOf(num);
+        int res = s.charAt(s.length() - k) - '0';
+        return res;
+    }
+}
