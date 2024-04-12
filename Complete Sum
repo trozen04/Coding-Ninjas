@@ -1,0 +1,15 @@
+import java.util.* ;
+import java.io.*; 
+
+class Solution {
+
+  public static int[] completeSum(int a[], int n) {
+    int[] result = new int[n];
+    int add = 0;
+    for(int i = 0; i < n; i++){
+      add+= a[i];
+      result[i] = add;
+    }
+    return result;
+  }
+}
