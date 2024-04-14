@@ -1,0 +1,39 @@
+import java.util.* ;
+import java.io.*; 
+public class Solution {
+	public static void sortOddEven(int[] nums) {
+		int odd = 0, even = 0;
+		for(int i = 0; i < nums.length; i++){
+			if(nums[i] % 2 == 0){
+				even++;
+			} else{
+				odd++;
+			}
+		}
+		int[] oddarr = new int[odd];
+		int o = 0;
+		int[] evenarr = new int[even];
+		int e = 0;
+		for(int i = 0; i < nums.length; i++){
+			if(nums[i] % 2 == 0){
+				evenarr[e] = nums[i];
+				e++;
+			} else{
+				oddarr[o] = nums[i];
+				o++;
+			}
+		}
+
+		Arrays.sort(oddarr);
+		Arrays.sort(evenarr);
+		int temp = 0;
+		for(int i = odd-1; i >= 0; i--){
+			nums[temp] = oddarr[i];
+			temp++;
+		}
+		for(int i = 0; i < even; i++){
+			nums[temp] = evenarr[i];
+			temp++;
+		}
+	}
+}
