@@ -1,0 +1,28 @@
+import java.util.* ;
+import java.io.*; 
+import java.util.ArrayList;
+
+public class Solution {
+    public static ArrayList<Integer> findAllSelfDividingNumbers(int lower, int upper) {
+        ArrayList<Integer> list = new ArrayList<>();
+        for(int i = lower; i <= upper; i++){
+            if(i < 10){
+                list.add(i);
+                continue;
+            }
+            int f = 0, num = i;
+            while(num > 0){
+                int rem = num % 10;
+                if(rem == 0 || i % rem != 0){
+                    f = 1;
+                    break;
+                }
+                num = num / 10;
+            }
+            if(f == 0){
+                list.add(i);
+            }
+        }
+        return list;
+    }
+}
